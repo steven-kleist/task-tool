@@ -1,0 +1,36 @@
+[project]
+name = "task-tool"
+version = "0.1.0"
+description = "Simple task tool for python integrating with pyproject.toml"
+readme = "README.md"
+license = {file = "LICENSE"}
+
+authors = [
+    {name = "Steven Kleist"}
+]
+maintainers = [
+    {name = "Steven Kleist"}
+]
+classifiers = []
+
+dependencies = [
+]
+
+[project.optional-dependencies]
+dev = [
+    "flit==3.9.0",
+]
+
+[project.scripts]
+tt = "task_tool.cli:main"
+
+[build-system]
+requires = ["flit_core <4"]
+build-backend = "flit_core.buildapi"
+
+[tool.tt.tasks]
+#build = {cmd = "flit build"}
+release = "./scripts/make_release.py"
+
+[tool.tt.tasks.build]
+cmd = "flit build"
