@@ -27,10 +27,3 @@ tt = "task_tool.cli:main"
 [build-system]
 requires = ["flit_core <4"]
 build-backend = "flit_core.buildapi"
-
-[tool.tt.tasks]
-#build = {cmd = "flit build"}
-release = "./scripts/make_release.py"
-
-[tool.tt.tasks.build]
-cmd = "flit build"
